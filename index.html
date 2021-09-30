@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Dice Clicker</title>
+</head>
+
+<body>
+  <h1>Dice Clicker</h1>
+  <h3>by - Sr Tlakuachse</h3>
+  <h4><a href="objVisual.html">3d visual</a></h4>
+  <div class="noselect diceHolder">
+    <h1>Luck points: <span id="luckCounter" onclick="oneClick()">0</span></h1>
+    <div class="dicePlace" id="dicePlace">
+      <span class="dice" id="mainDice">1</span>
+    </div>
+  </div>
+  <div class="noselect shopHolder">
+    <h3>Shop</h3>
+
+    <div class="objectContainer">
+      <div class="objectLabel">
+        <h4>D2</h4>
+      </div>
+      <div class="mainContainer">
+        <div class="objectBuyContainer">
+          <p>Price:<span id="D2price">$$$</span></p>
+          <button onclick="buyObject(0)">Buy</button>
+          <p id="D2Inventory"></p>
+        </div>
+        <div class="objectDisplay"></div>
+      </div>
+    </div>
+
+    <div class="objectContainer">
+      <div class="objectLabel">
+        <h4>D4</h4>
+      </div>
+      <div class="mainContainer">
+        <div class="objectBuyContainer">
+          <p>Price:<span id="D4price">$$$</span></p>
+          <button onclick="buyObject(1)">Buy</button>
+          <p id="D4Inventory"></p>
+        </div>
+        <div class="objectDisplay"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="mainGame.js"></script>
+</body>
+
+</html>

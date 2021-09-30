@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: diceFont;
+  src: url("./fonts/Dicier-Round-Light.otf")
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.diceHolder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dicePlace{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: rgb(0, 0, 0);
+  border-style: dashed;
+  width: 200px;
+  height: 200px;
+}
+
+.textDice{
+  font-family: diceFont;
+}
+
+.dice{
+  font-family: diceFont;
+  font-size: 3em;
+}
+
+
+.shopHolder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.objectContainer{
+  margin: 10px 0px;
+  border: 1px black dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+  height:10em;
+}
+
+.objectLabel{
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  max-height: 30px;
+}
+
+.mainContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 30%;
+  width: 100%;
+  height: 100%;
+}
+
+
+.objectBuyContainer{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+}
+
+.objectBuyContainer > button{
+  color: white;
+  background-color: black;
+  border: none;
+  width: 80%;
+  height: 50%;
+  transition: 0.25s;
+  border: 2px black solid;
+}
+
+.objectBuyContainer > button:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px black solid;
+}
+
+.objectBuyContainer > button:active{
+  color: black;
+  background-color: white;
+  border: 2px black solid;
+}
