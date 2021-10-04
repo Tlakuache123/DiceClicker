@@ -8,13 +8,21 @@
 </head>
 
 <body>
-  <h1>Dice Clicker</h1>
-  <h3>by - Sr Tlakuachse</h3>
-  <h4><a href="objVisual.html">3d visual</a></h4>
+  <div class="title">
+    <div>
+      <h1>GENERIC DICE</h1>
+      <h3>Sr Tlakuachse</h3>
+    </div>
+    <span class="dice" id="mainDice">1</span>
+  </div>
+
+
   <div class="noselect diceHolder">
     <h1>Luck points: <span id="luckCounter" onclick="oneClick()">0</span></h1>
     <div class="dicePlace" id="dicePlace">
-      <span class="dice" id="mainDice">1</span>
+      <div id="canvas"></div>
+
+      <div id="D4render" class="objectDisplay"></div>
     </div>
   </div>
   <div class="noselect shopHolder">
@@ -30,7 +38,7 @@
           <button onclick="buyObject(0)">Buy</button>
           <p id="D2Inventory"></p>
         </div>
-        <div class="objectDisplay"></div>
+        <div id="D2render" class="objectDisplay"></div>
       </div>
     </div>
 
@@ -44,12 +52,16 @@
           <button onclick="buyObject(1)">Buy</button>
           <p id="D4Inventory"></p>
         </div>
-        <div class="objectDisplay"></div>
+
       </div>
     </div>
   </div>
 
+  <script src="./libraries/three.js"></script>
+  <script src="./libraries/OrbitControls.js"></script>
+  <script src="./libraries/GLTFLoader.js"></script>
   <script type="text/javascript" src="mainGame.js"></script>
+  <script type="text/javascript" src="renderDice.js"></script>
 </body>
 
 </html>

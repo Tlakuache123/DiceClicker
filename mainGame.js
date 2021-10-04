@@ -73,3 +73,11 @@ setInterval(function(){
 setInterval(function(){
   render();
 }, 1000 / FPS);
+
+
+// -----------------------------------
+
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  e.returnValue = '';
+});
