@@ -6,6 +6,44 @@ var objectPrice = [10,100,500];
 
 var myElementMainDice = document.getElementById("dicePlace");
 var myElementLuckyCounter = document.getElementById("luckCounter");
+
+
+//--------------------------------------
+
+
+// Clear data
+if(localStorage.getItem('clearData')){
+  localStorage.clear();
+}
+
+// Load data
+if(localStorage.getItem('luckyPoints')){
+  luckPoints = parseInt(localStorage.getItem('luckyPoints'));
+}
+
+if(localStorage.getItem('generators')){
+  generatorsDictionary = JSON.parse(localStorage.getItem('generators'));
+  inventory = generatorsDictionary['saveInventory'];
+  objectPrice = generatorsDictionary['savePrice'];
+}
+
+//----------------------------------------
+
+function saveToLocalStorage() {
+  localStorage.setItem('luckyPoints', luckPoints);
+  localStorage.setItem('generators', JSON.stringify({
+    saveInventory: inventory,
+    savePrice: objectPrice 
+  }))
+}
+
+function resetData(){
+  if(confirm("RESET DATA?")){
+    localStorage.setItem('clearData',"TRUE");
+    location.reload();
+  }
+}
+
 // --------------------------------------------------------------
 
 function updatePrice(){
@@ -39,7 +77,7 @@ function oneClick() {
   luckPoints += 1;
   clickNum++;
   document.getElementById("mainDice").innerHTML = roll;
-  document.getElementById("clickCount").innerHTML = clickNum;
+  //document.getElementById("clickCount").innerHTML = clickNum;
 }
 
 // -----------------------------------
@@ -78,6 +116,5 @@ setInterval(function(){
 // -----------------------------------
 
 window.addEventListener('beforeunload', function (e) {
-  e.preventDefault();
-  e.returnValue = '';
+  saveToLocalStorage();
 });

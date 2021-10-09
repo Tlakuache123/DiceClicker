@@ -2,12 +2,10 @@ let scene, camera, renderer;
 const canvas3d = document.getElementById("canvas");
 
 scene = new THREE.Scene();
-scene.background = new THREE.Color(0xdddddd);
 
-renderer = new THREE.WebGLRenderer({
-    antialias: true
-});
+renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(200, 200);
+renderer.setClearColor(0xff00ff, 0);
 canvas3d.appendChild(renderer.domElement);
 
 camera = new THREE.PerspectiveCamera(45, 200 / 200, 0.1, 1000);
